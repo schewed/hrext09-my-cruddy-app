@@ -35,6 +35,7 @@ var clearEverything = function() {
   return window.localStorage.clear();
 }
 
+// find key
 var keyExists = function(key) {
   var currentValue = getItem(key);
   return currentValue !== null;
@@ -68,4 +69,21 @@ $(document).ready(function() {
       //current key doesnt exist, do stuff
     }
   });
+
+  $('#addItemButton').click(function(event) {
+    return window.localStorage.setItem(key, value);
+  });
+
+  $('#clearListButton').click(function(event) {
+    return window.localStorage.clear();
+  });
+
+  $('#checkbox').click(function(event) {
+    return window.localStorage.removeItem();
+  });
+
 });
+
+
+
+
