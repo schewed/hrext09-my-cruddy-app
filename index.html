@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>HREXT09 R00lz!</title>
+  <title>CRUD App</title>
   <script
           src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
           crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 </head>
+
 <body>
+  <h1 align="center" style="color:#2874A6">Grocery List</h1>
+  <section>Enter item below and select department</section>
+  <input type="text" name="addItem" maxlength="255" size="75"></input>
+  <!-- <label for="dept-select">Department:</label> -->
+    <select id="department">
+      <option value="">Choose a department</option>
+      <option value="alcohol">Alcohol</option>
+      <option value="bakery">Bakery</option>
+      <option value="canned">Canned</option>
+      <option value="parrot">Cleaning</option>
+      <option value="dairy">Dairy</option>
+      <option value="deli">Deli</option>
+      <option value="dry">Drt</option>
+      <option value="frozen">Frozen</option>
+      <option value="health&beauty">Health & Beauty</option>
+      <option value="kitchenware">Kitchenware</option>
+      <option value="meat">Meat</option>
+      <option value="office-supplies">Office Supplies</option>
+      <option value="pets">Pets</option>
+      <option value="pharmacy">Pharmacy</option>
+      <option value="produce">Produce</option>
+      <option value="other">Other</option>
+    </select>
+  <button id="addItemButton" type="submit">Add Item</button>
+  <button id="clearListButton" type="submit">Clear List</button>
+  <br>
+  <hr>
   <form>
     <input id="keyInput" type="text" placeholder="key"></input>
     <input id="valueInput" type="text" placeholder="value"></input>
-    <button id="createButton" type='submit'>Create</button>
     <button id="updateButton" type='submit'>Update</button>
   </form>
+<div id="listbox" class="box">
+
+<div id="checkbox" class="check">
+<input type="checkbox" name="item" value="Bike"> Item<br>
+</div>
+</div>
   <script src='app/app.js'></script>
 </body>
 </html>
