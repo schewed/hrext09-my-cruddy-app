@@ -9,47 +9,40 @@
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
           crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <h1 align="center" style="color:#2874A6">Grocery List</h1>
-  <section>Enter item below and select department</section>
-  <input type="text" name="addItem" maxlength="255" size="75"></input>
-  <!-- <label for="dept-select">Department:</label> -->
-    <select id="department">
-      <option value="">Choose a department</option>
-      <option value="alcohol">Alcohol</option>
-      <option value="bakery">Bakery</option>
-      <option value="canned">Canned</option>
-      <option value="parrot">Cleaning</option>
-      <option value="dairy">Dairy</option>
-      <option value="deli">Deli</option>
-      <option value="dry">Dry</option>
-      <option value="frozen">Frozen</option>
-      <option value="health&beauty">Health & Beauty</option>
-      <option value="kitchenware">Kitchenware</option>
-      <option value="meat">Meat</option>
-      <option value="office-supplies">Office Supplies</option>
-      <option value="pets">Pets</option>
-      <option value="pharmacy">Pharmacy</option>
-      <option value="produce">Produce</option>
-      <option value="other">Other</option>
-    </select>
-  <button id="addItemButton" class="item" type="submit">Add Item</button>
-  <button id="clearListButton" type="submit">Clear List</button>
+  <h1>CRUD Grocery List App</h1>
+    <form>Enter item and select department
+      <input id="itemInput" type="text" name="addItem" maxlength="40" size="40"></input>
+        <select id="departmentInput" type="submit" class="dropdown">
+          <option value="">Choose a department</option>
+          <option value="alcohol">Alcohol</option>
+          <option value="bakery">Bakery</option>
+          <option value="beverages">Beverages</option>
+          <option value="canned">Canned</option>
+          <option value="cleaning">Cleaning</option>
+          <option value="dairy">Dairy</option>
+          <option value="deli">Deli</option>
+          <option value="dry">Dry</option>
+          <option value="frozen">Frozen</option>
+          <option value="health&beauty">Health & Beauty</option>
+          <option value="kitchenware">Kitchenware</option>
+          <option value="meat">Meat</option>
+          <option value="office-supplies">Office Supplies</option>
+          <option value="pets">Pets</option>
+          <option value="pharmacy">Pharmacy</option>
+          <option value="produce">Produce</option>
+          <option value="other">Other</option>
+        </select>
+          <button id="addItemButton" class="button" type="submit">Add Item</button>
+          <button id="clearListButton" class="button" type="submit">Clear List</button>
+  </form>
   <br>
   <hr>
-  <form>
-    <input id="keyInput" type="text" placeholder="key"></input>
-    <input id="valueInput" type="text" placeholder="value"></input>
-    <button id="updateButton" type='submit'>Update</button>
-  </form>
-<div id="item-container" class="container">
-<!-- this is where items will go -->
-<div id="checkbox" class="check">
-<input type="checkbox" name="item" value="Bike"> Item<br>
-</div>
-</div>
+    <ul id="item-container" class="container">
+    </ul>
   <script src='app/app.js'></script>
 </body>
 </html>

@@ -62,73 +62,28 @@ var keyExists = function(key) {
 
 
 $(document).ready(function() {
-  $('#createButton').click(function(event) {
-    event.preventDefault();
 
-    var currentKey = $("#keyInput").val();
-    var currentValue = $("#valueInput").val();
-    if (keyExists(currentKey)) {
-      //current key exists, do something error-handle-y
-    } else {
-      createItem(currentKey, currentValue);
-    }
-  });
-
-  $('#updateButton').click(function(event) {
-    event.preventDefault();
-
-    var currentKey = $("#keyInput").val();
-    var currentValue = $("#valueInput").val();
-    if (keyExists(currentKey)) {
-      updateItem(currentKey, currentValue);
-    } else {
-      //current key doesnt exist, do stuff
-    }
-  });
-
+  // ADD ITEM BUTTON
   $('#addItemButton').click(function(event) {
-  var printItem = $('<div class="item"</div>');
-  printItem.appendTo("#item-container");
-  createItem(currentKey, currentValue);
+  event.preventDefault();
+  var currentKey = $("#itemInput").val();     // key is the item
+  var currentValue = $("#departmentInput").val(); // value is the department
+    if (keyExists(currentKey)) {
+        alert("That item has already been added");
+      }
+      else {
+        createItem(currentKey, currentValue);
+        var printItem = $(`<li><input type="checkbox" class="box"><label for="box"</label></input>${currentKey}</li>`);
+        printItem.appendTo("#item-container");
+      }
+     $('#itemInput').val('');
   });
 
-  $('#clearListButton').click(function(event) {
+// CLEAR local storage
+  $('#clearListButton').click(function() {
     return window.localStorage.clear();
   });
 
-  $('#checkbox').click(function(event) {
-    return window.localStorage.removeItem();
-  });
-
 });
-
-
-
-// FROM DAVE'S ORIGINAL APP.JS
-// $(document).ready(function() {
-//   $('#createButton').click(function(event) {
-//     event.preventDefault();
-
-//     var currentKey = $("#keyInput").val();
-//     var currentValue = $("#valueInput").val();
-//     if (keyExists(currentKey)) {
-//       //current key exists, do something error-handle-y
-//     } else {
-//       createItem(currentKey, currentValue);
-//     }
-//   });
-
-//   $('#updateButton').click(function(event) {
-//     event.preventDefault();
-
-//     var currentKey = $("#keyInput").val();
-//     var currentValue = $("#valueInput").val();
-//     if (keyExists(currentKey)) {
-//       updateItem(currentKey, currentValue);
-//     } else {
-//       //current key doesnt exist, do stuff
-//     }
-//   });
-// });
 
 
